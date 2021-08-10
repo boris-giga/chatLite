@@ -105,25 +105,3 @@ function outputUsers(users) {
   ${users.map(user => `<li>${user.username}</li>`).join('')}
   `
 }
-
-
-// removes blur from chat
-// function clickJoin() {
-//   const chat = document.querySelector('.chat-container')
-//   const joinForm = document.querySelector('.join-container')
-//   const usernameValue = document.getElementById('username').value
-//   const roomValue = document.getElementById('room').value
-//   sessionStorage.setItem('username', usernameValue)
-//   sessionStorage.setItem('room', roomValue)
-//   chat.classList.remove('blr')
-//   joinForm.classList.add('dissolve')
-//   console.log(`${usernameValue} / ${roomValue} // ${sessionStorage}`)
-// }
-
-function clickLeave() {
-  sessionStorage.clear()
-  const chat = document.querySelector('.chat-container')
-  const joinForm = document.querySelector('.join-container')
-  joinForm.classList.remove('dissolve')
-  chat.classList.add('blr')
-}
