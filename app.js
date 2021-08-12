@@ -16,6 +16,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // run when client connects
 io.on('connection', socket => {
+
+	console.log('socket',socket.id)
 	socket.on('joinRoom', ({username, room}) => {
 		const user = userJoin(socket.id, username, room)
 		socket.join(user.room)
@@ -45,6 +47,7 @@ io.on('connection', socket => {
 	// runs when client disconnects
 	socket.on('disconnect', () => {
 		const user = userLeave(socket.id)
+		console.log('try disconnect', user)
 		if (user) {
 			// emits to all the clients in general (in specific room - to(...))
 			io.to(user.room).emit('message', formatMessage(botName,`${user.username} has left the chat`));
