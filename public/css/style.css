@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
 :root {
-	--dark-color-a: #667aff;
-	--dark-color-b: #7386ff;
-	--light-color: #e6e9ff;
+	--dark-color-a: #000000;
+	--dark-color-b: rgba(0, 0, 0, 0.7);
+	--light-color: #efeeee;
 	--success-color: #5cb85c;
 	--error-color: #d9534f;
 }
@@ -21,6 +21,18 @@ body {
 	margin: 20px;
 }
 
+::-webkit-scrollbar {
+  width: 1em;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(199, 199, 199);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 ul {
 	list-style: none;
 }
@@ -32,10 +44,18 @@ a {
 .btn {
 	cursor: pointer;
 	padding: 5px 15px;
-	background: var(--light-color);
-	color: var(--dark-color-a);
-	border: 0;
+	background: rgba(27, 27, 27, 1);
+	color: var(--light-color);
+	border: 1px solid rgba(107, 107, 107, 0.8);
 	font-size: 17px;
+	border-radius: 7px;
+	transition: all 0.3s;
+}
+
+.btn:hover {
+	background: var(--light-color);
+	color: rgba(27, 27, 27, 1);
+	transition: all 0.3s;
 }
 
 /* Chat Page */
@@ -43,13 +63,13 @@ a {
 .chat-container {
 	top: 0px;
 	bottom: 0px;
-	height: 729px;
+	height: 699px;
 	width: 1025px;
-	background: #fff;
+	background: rgb(121, 121, 121);
 	margin: 30px auto;
 	overflow: hidden;
 
-	transition: all .3s;
+	transition: all 0.3s;
 }
 
 .chat-header {
@@ -130,6 +150,9 @@ a {
 	padding: 5px;
 	height: 40px;
 	flex: 1;
+	border-radius: 7px;
+	border: none;
+	background-color: var(--light-color);
 }
 
 /* Join Page */
@@ -142,9 +165,9 @@ a {
 	max-width: 500px;
 	margin: 80px auto;
 	color: #fff;
-	
+
 	position: absolute;
-	transition: all .3s;
+	transition: all 0.3s;
 }
 
 .join-header {
@@ -178,6 +201,11 @@ a {
 	padding: 5px;
 	height: 40px;
 	width: 100%;
+	border: none;
+	border-radius: 7px;
+	background-color: var(--light-color);
+	color: #5d5b5b;
+	border: 1px solid rgba(107, 107, 107, 0.8);
 }
 
 .join-main select {
@@ -201,8 +229,6 @@ a {
 	margin-right: auto;
 	right: 0;
 	left: 0;
-	
-	
 }
 
 .dissolve {

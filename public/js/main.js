@@ -18,7 +18,6 @@ joinRoomBtn.addEventListener('click', (e) => {
   sessionStorage.setItem('room', roomValue)
   chat.classList.remove('blr')
   joinForm.classList.add('dissolve')
-  console.log(`${usernameValue} / ${roomValue} // ${sessionStorage}`)
 
 // get username and room from URL
 // const urlParams = new URLSearchParams(location.search) // TODO: cut off, add session storage
@@ -27,10 +26,8 @@ joinRoomBtn.addEventListener('click', (e) => {
   // get username and room from session storage
   const {username, room} = sessionStorage
 
-  
-
   // join chatroom
-  socket.emit('joinRoom', {username, room}) // TODO get from session storage
+  socket.emit('joinRoom', {username, room}) 
 
   // get room and users
   socket.on('roomUsers', ({room, users}) => {

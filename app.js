@@ -35,8 +35,6 @@ io.on('connection', socket => {
 		})
 	})
 
-	
-
 	// listen for chatMessage and emit it to the front end
 	socket.on('chatMessage', msg => {
 		const user = getCurrentUser(socket.id)
