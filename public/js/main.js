@@ -3,10 +3,17 @@ const chatMessages = document.querySelector('.chat-messages');
 const roomName = document.getElementById('room-name')
 const usersList = document.getElementById('users')
 
-const joinRoomBtn = document.querySelector('button.btn');
+const joinRoomBtn = document.querySelector('button.join');
+const generateBtn = document.querySelector('button.generate');
 const leaveRoomBtn = document.querySelector('a.btn');
 
 const socket = io();
+
+generateBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  const randomRoomName = Math.random().toString(16).slice(2);
+  document.getElementById('room').value = randomRoomName
+})
 
 joinRoomBtn.addEventListener('click', (e) => {
   e.preventDefault();
