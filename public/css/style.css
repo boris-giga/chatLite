@@ -241,9 +241,22 @@ a {
 
 .btn-container {
 	display: flex;
-	/* flex-direction: row;
-	justify-content: space-between; */
 	margin: 0 -5px;
+}
+
+.sidebar-room-container input {
+	background-color: rgba(1,1,1,0);
+	border: none;
+	color: #fff;
+	font-size: 16px;
+	padding-bottom: 18px;
+}
+
+i.far.fa-copy {
+	position: absolute;
+	top: 0;
+	right: 0;
+	cursor: pointer;
 }
 
 @media (max-width: 700px) {

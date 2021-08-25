@@ -6,13 +6,22 @@ const usersList = document.getElementById('users')
 const joinRoomBtn = document.querySelector('button.join');
 const generateBtn = document.querySelector('button.generate');
 const leaveRoomBtn = document.querySelector('a.btn');
+const copyIcon = document.querySelector('i.far.fa-copy');
 
 const socket = io();
+
+copyIcon.addEventListener('click', (e) => {
+  e.preventDefault()
+  console.log('icon clicked')
+  roomName.select()
+  document.execCommand('copy')
+
+})
 
 generateBtn.addEventListener('click', (e) => {
   e.preventDefault();
   const randomRoomName = Math.random().toString(16).slice(2);
-  document.getElementById('room').value = randomRoomName
+  document.getElementById('room').value = randomRoomName;
 })
 
 joinRoomBtn.addEventListener('click', (e) => {
@@ -100,7 +109,9 @@ function outputMessage(message) {
 
 // add room name to DOM
 function outputRoomName(room) {
-  roomName.innerText = room 
+  // roomName.innerText = room 
+  roomName.value = room 
+
 }
 
 // add users list to DOM
