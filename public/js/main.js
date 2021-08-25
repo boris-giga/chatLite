@@ -6,16 +6,15 @@ const usersList = document.getElementById('users')
 const joinRoomBtn = document.querySelector('button.join');
 const generateBtn = document.querySelector('button.generate');
 const leaveRoomBtn = document.querySelector('a.btn');
-const copyIcon = document.querySelector('i.far.fa-copy');
+const copyBtn = document.querySelector('button.copy-room');
 
 const socket = io();
 
-copyIcon.addEventListener('click', (e) => {
+copyBtn.addEventListener('click', (e) => {
   e.preventDefault()
-  console.log('icon clicked')
   roomName.select()
   document.execCommand('copy')
-
+  alert(`Copied Room Name ${roomName.value}`)
 })
 
 generateBtn.addEventListener('click', (e) => {
