@@ -64,7 +64,7 @@ a {
 	top: 0px;
 	bottom: 0px;
 	height: 699px;
-	width: 1025px;
+	max-width: 1025px;
 	background: rgb(121, 121, 121);
 	margin: 30px auto;
 	overflow: hidden;
