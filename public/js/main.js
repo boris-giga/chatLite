@@ -27,8 +27,31 @@ joinRoomBtn.addEventListener('click', (e) => {
   e.preventDefault();
   const chat = document.querySelector('.chat-container')
   const joinForm = document.querySelector('.join-container')
-  const usernameValue = document.getElementById('username').value
-  const roomValue = document.getElementById('room').value
+  const usernameInput = document.getElementById('username')
+  const roomInput = document.getElementById('room')
+  const usernameValue = usernameInput.value
+  const roomValue = roomInput.value
+
+  if(usernameValue === '' || usernameValue == null) {
+    alert('Please enter a nickname!')
+    usernameInput.focus()
+    return false
+  } else if(usernameValue.length < 2) {
+    alert('Nickname must be at least 2 characters!')
+    usernameInput.focus()
+    return false
+  }
+
+  if(roomValue === '' || roomValue === null) {
+    alert(`Please enter a room or click "Generate Room" button!`)
+    roomInput.focus()
+    return false
+  } else if(roomValue.length < 3) {
+    alert('Room name must be at least 3 characters!')
+    roomInput.focus()
+    return false
+  }
+
   sessionStorage.setItem('username', usernameValue)
   sessionStorage.setItem('room', roomValue)
   chat.classList.remove('blr')
