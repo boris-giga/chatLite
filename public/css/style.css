@@ -222,6 +222,10 @@ a {
   margin: 0 5px;
 }
 
+button.generate.btn {
+	animation: glowing 1500ms infinite;
+}
+
 .blr {
 	filter: blur(4px);
 	opacity: 0.5;
@@ -257,6 +261,12 @@ i.far.fa-copy {
 	top: 0;
 	right: 0;
 	cursor: pointer;
+}
+
+@-webkit-keyframes glowing {
+  0% { -webkit-box-shadow: 0 0 3px #fff }
+  50% { -webkit-box-shadow: 0 0 20px #fff; }
+  100% { -webkit-box-shadow: 0 0 3px #fff; }
 }
 
 @media (max-width: 700px) {
